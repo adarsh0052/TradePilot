@@ -1,46 +1,152 @@
-# 📈 Finance RAG: Autonomous Trading Research Engine
+# 📈 TradePilot — Autonomous Trading Research Engine
 
-![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
-![Streamlit](https://img.shields.io/badge/Streamlit-UI-red)
-![LangChain](https://img.shields.io/badge/LangChain-RAG-green)
-![Ollama](https://img.shields.io/badge/Ollama-Local%20LLM-orange)
+![Python](https://img.shields.io/badge/Python-3.9+-blue?style=for-the-badge\&logo=python)
+![React](https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge\&logo=react\&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-Frontend-3178C6?style=for-the-badge\&logo=typescript\&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-UI-FF4B4B?style=for-the-badge\&logo=streamlit\&logoColor=white)
+![LangChain](https://img.shields.io/badge/LangChain-RAG-1C3C3C?style=for-the-badge)
+![Ollama](https://img.shields.io/badge/Ollama-Local%20LLM-000000?style=for-the-badge)
+![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector%20DB-7B61FF?style=for-the-badge)
 
-### 🧠 The "Brain" of an Autonomous Trading System
-
-**Finance RAG** is a local, privacy-focused analysis tool designed to ingest complex financial documents (SEC 10-K filings, IPO reports, Earnings transcripts) and provide evidence-based answers. 
-
-This project serves as **Module 1** of a larger **Autonomous Trading Bot** ecosystem. Before executing trades, the system uses this engine to understand the *fundamental* risks and sentiment hidden in unstructured text, complementing technical chart analysis.
+---
+## 🏗️ Architecture
+![TradePilot Architecture](./assets/tradepilot-architecture.png)
 
 ---
 
-## 🚀 Features
 
-* **Local Privacy:** Runs entirely offline using **Ollama (Llama 3)**. No data leaves your machine.
-* **RAG Architecture:** Uses Retrieval-Augmented Generation to minimize hallucinations.
-* **Smart Ingestion:** Processes PDF documents using `RecursiveCharacterTextSplitter` to maintain financial context.
-* **Vector Search:** Utilizes **ChromaDB** and **Nomic Embeddings** for semantic similarity search.
-* **Source Citation:** The AI provides specific citations and excerpts for every answer to ensure trust.
-* **Chat Interface:** A clean, WhatsApp-style UI built with **Streamlit**.
+## 🧠 Overview
+
+TradePilot is a full-stack financial intelligence platform that combines AI-powered financial research with adaptive trading strategy simulation.
+
+The platform is designed to analyze complex financial documents, extract market insights using Retrieval-Augmented Generation (RAG), and support autonomous trading research workflows through interactive dashboards and strategy simulations.
 
 ---
+
+## 🚀 Core Modules
+
+### 📄 Financial Research Engine
+
+A privacy-focused RAG pipeline that processes:
+
+* SEC 10-K filings
+* IPO prospectuses
+* Earnings transcripts
+* Financial reports
+
+The engine performs semantic search and evidence-based question answering using local LLM inference through Ollama.
+
+#### Features
+
+* Fully local AI inference using Ollama (Llama 3)
+* Retrieval-Augmented Generation (RAG)
+* Semantic search with ChromaDB
+* Context-aware document chunking
+* Source-cited financial analysis
+* Conversational research interface
+
+---
+
+### 🤖 Adaptive Trading Simulator
+
+An interactive trading simulation dashboard that visualizes algorithmic trading strategies on dynamically generated market data.
+
+The simulator includes a separate React + TypeScript frontend for monitoring strategies, charting market behavior, and tracking trading performance in real time.
+
+#### Features
+
+* Realistic market simulation using Random Walk with Drift
+* RSI reversal strategy
+* SMA & EMA crossover strategies
+* Volume breakout detection
+* Real-time realized/unrealized PnL tracking
+* Interactive trading visualizations
+* Short-selling support
+* React + TypeScript frontend dashboard
+
+---
+
+
+
 
 ## 🛠️ Tech Stack
 
-* **Language:** Python
-* **LLM Orchestration:** LangChain
-* **Local LLM:** Ollama (Llama 3)
-* **Vector Database:** ChromaDB
-* **Embeddings:** Nomic-embed-text
-* **Frontend:** Streamlit
+### Backend & AI
+
+* Python
+* LangChain
+* Ollama (Llama 3)
+* ChromaDB
+* Nomic Embeddings
+
+### Frontend
+
+* React
+* TypeScript
+* HTML
+* CSS
+
+### Visualization & Analytics
+
+* Streamlit
+* Pandas
+* NumPy
 
 ---
 
-## ⚙️ Installation & Setup
+## ⚙️ Installation
 
-### 1. Prerequisites
-You must have [Ollama](https://ollama.com/) installed on your system.
-Once installed, pull the required models via your terminal:
+### Clone Repository
+
+```bash
+git clone https://github.com/adarsh0052/TradePilot.git
+cd TradePilot
+```
+
+---
+
+### Create Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+#### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+#### Mac/Linux
+
+```bash
+source venv/bin/activate
+```
+
+---
+
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### Install Ollama Models
 
 ```bash
 ollama pull llama3
 ollama pull nomic-embed-text
+```
+
+---
+
+## ▶️ Running the Application
+
+```bash
+streamlit run main.py
+```
+
+
+
