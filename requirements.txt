@@ -1,7 +1,5 @@
 streamlit
-langchain
-langchain-community
-langchain-core
-langchain-ollama
-chromadb
-pypdf
+pandas
+pandas_ta
+numpy
+altair
